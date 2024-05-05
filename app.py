@@ -5,7 +5,7 @@ import time
 app = Flask(__name__, template_folder='templates')
 
 # Define the serial port and baud rate
-port = '/dev/ttyUSB1'  # Change this to match your Raspberry Pi's serial port
+port = '/dev/ttyUSB0'  # Change this to match your Raspberry Pi's serial port
 baud_rate = 9600
 
 @app.route('/home', methods=['GET'])
@@ -29,7 +29,7 @@ def query_records():
 
 #    if serial_available:
         # Construct input in the format <8-1 | 10-2>
-    input_value = f"<11-1 | 10-2>"
+    input_value = f"<9-1 | 11-1>"
 
         # Write data to serial port
     ser.write(input_value.encode())
